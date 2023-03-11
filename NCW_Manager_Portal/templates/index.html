@@ -3,31 +3,38 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h1>Flask</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <h1>Manager Portal</h1>
+    <p class="lead">Welcome to your management portal for NASCAR Car Wash.</p>
+    <p><a href="mailto:chris@nascarcarwash.com" class="btn btn-danger btn-large">Log out &raquo;</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>New Hire Paperwork</h2>
         <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            This portal can be used to submit New Hire paperwork to HR. Once approved, the new hire will obtain an email with the username nad password to login. You, as the hiring manager, will also obtain an email with the same login information as a confirmation they have been approved and hired.
         </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
+        <h2>Incident Report</h2>
+        <p>This portal can be used to submit Incident Reports to management. This report should be used to document (potentially) serious incidents that need to be tracked. This form can be submitted even if a write up is not issued. Do not submit petty incidents using this form.</p>
     </div>
     <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
+        <h2>Employee Termination</h2>
+        <p>This portal can be used to terminate employees who no longer work for the company. This will render their Microsoft Office 365 account unusable. This means all access to files, Teams (including shifts), and email will be inaccessible.</p>
     </div>
 </div>
 
-{% endblock %}
+<div class="row">
+    <div class="col-md-4">
+        <p><a class="btn btn-warning" href="{{url_for('NewHirePaperwork')}}">Request Paperwork Review &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <p><a class="btn btn-danger" href="{{url_for('IncidentReport')}}">Submit Report &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <p><a class="btn btn-primary" href="{{url_for('EmployeeTermination')}}">Request Termination &raquo;</a></p>
+    </div>
+</div>
+
+    {% endblock %}

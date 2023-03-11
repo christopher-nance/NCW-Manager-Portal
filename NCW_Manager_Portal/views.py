@@ -35,3 +35,33 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.route('/NewHirePaperwork')
+def NewHirePaperwork():
+    """Renders the about page."""
+    return render_template(
+        'NewHirePaperwork.html',
+        title='New Hire Paperwork',
+        year=datetime.now().year,
+        message='Your application description page.'
+    )
+
+@app.route('/IncidentReport')
+def IncidentReport():
+    """Renders the about page."""
+    return render_template(
+        'IncidentReport.html',
+        title='Incident Report',
+        year=datetime.now().year,
+        message='Your application description page.'
+    )
+
+@app.route('/EmployeeTermination')
+def EmployeeTermination():
+    """Renders the about page."""
+    return render_template(
+        'EmployeeTermination.html',
+        title='Employee Termination',
+        year=datetime.now().year,
+        message='Your application description page.'
+    )

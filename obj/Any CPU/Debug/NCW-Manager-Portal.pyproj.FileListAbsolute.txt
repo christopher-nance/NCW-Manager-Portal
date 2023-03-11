@@ -1,0 +1,2 @@
+C:\Users\chris\source\repos\NCW-Manager-Portal\obj\Any CPU\Debug\NCW-Manager-Portal.pyproj.SuggestedBindingRedirects.cache
+C:\Users\chris\source\repos\NCW-Manager-Portal\obj\Any CPU\Debug\NCW-Manager-Portal.pyproj.CoreCompileInputs.cache
