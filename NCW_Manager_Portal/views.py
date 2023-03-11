@@ -43,7 +43,7 @@ def NewHirePaperwork():
         'NewHirePaperwork.html',
         title='New Hire Paperwork',
         year=datetime.now().year,
-        message='Your application description page.'
+        message='Please complete the form below and press Submit Request to submit paperwork to HR for approval.'
     )
 
 @app.route('/IncidentReport')

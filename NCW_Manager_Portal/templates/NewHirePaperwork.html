@@ -2,9 +2,49 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
 
-<p>Use this area to provide additional information.</p>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2>{{ title }}</h2>
+            <h3>{{ message }}</h3>
+            <div class="col-md-6">
+
+                <br />
+                <h4>Employee Information</h4>
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" pattern="[A-Za-z]+" required>
+                        <div class="invalid-feedback">Please enter a valid first name. No numbers or symbols allowed.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" pattern="[A-Za-z]+" required>
+                        <div class="invalid-feedback">Please enter a valid last name. No numbers or symbols allowed.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee_id">Employee ID</label>
+                        <input type="number" class="form-control" id="employee_id" name="employee_id" min="1000" max="99999" required>
+                        <div class="invalid-feedback">Please enter a valid employee ID between 1000 and 99999.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="employee_email">Employee Email</label>
+                        <input type="email" class="form-control" id="employee_email" name="employee_email" required>
+                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="file_upload">File Upload</label>
+                        <input type="file" id="file_upload" name="file_upload" accept=".pdf" required>
+                        <div class="invalid-feedback">Please upload a PDF file.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery and Bootstrap JS -->
+</body>
 
 {% endblock %}
