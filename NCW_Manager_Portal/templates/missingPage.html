@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="col-md-8">
+        <div class="text-center">
+            <h1 class="display-1">Oops!</h1>
+            <h2 class="display-4">404 Not Found</h2>
+            <p class="lead">We're sorry, but the page you requested could not be found.</p>
+            <hr class="my-4">
+            <p class="lead">Please check your URL and try again.</p>
+            <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg">Go back to homepage</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

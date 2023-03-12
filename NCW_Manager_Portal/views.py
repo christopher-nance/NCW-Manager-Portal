@@ -65,3 +65,12 @@ def EmployeeTermination():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH'])
+def catch_all(path):
+    """Catches any errors and returns error page."""
+    return render_template(
+        'missingPage.html',
+        errorCode=404,
+        message='The page you requested does not exists. Please make sure you are trying to access an existing resource or contact your IT administrator for more information.'
+    )

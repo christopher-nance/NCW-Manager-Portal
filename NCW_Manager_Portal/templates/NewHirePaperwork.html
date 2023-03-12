@@ -5,41 +5,71 @@
 
 
 <body>
+    <div id="loading" class="overlay">
+        <div class="spinner"></div>
+    </div>
+
     <div class="container">
         <div class="row">
             <h2>{{ title }}</h2>
             <h3>{{ message }}</h3>
+            <h4>Hover your mouse over the black 'i' information icon for more information on that field.</h4>
             <div class="col-md-6">
 
                 <br />
                 <h4>Employee Information</h4>
-                <form method="post" enctype="multipart/form-data">
+                <form id="employee-form" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
+                        <span data-toggle="tooltip" data-placement="right" title="This should be the legal full FIRST name of the employee you are hiring. The name should omit any special characters, numbers and symbols.">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM7.5 4.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM8 11a1 1 0 0 1-1-1V6a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" />
+                            </svg>
+                        </span>
                         <input type="text" class="form-control" id="first_name" name="first_name" pattern="[A-Za-z]+" required>
                         <div class="invalid-feedback">Please enter a valid first name. No numbers or symbols allowed.</div>
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
+                        <span data-toggle="tooltip" data-placement="right" title="This should be the legal full LAST name of the employee you are hiring. The name should omit any special characters, numbers and symbols.">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM7.5 4.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM8 11a1 1 0 0 1-1-1V6a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" />
+                            </svg>
+                        </span>
                         <input type="text" class="form-control" id="last_name" name="last_name" pattern="[A-Za-z]+" required>
                         <div class="invalid-feedback">Please enter a valid last name. No numbers or symbols allowed.</div>
                     </div>
                     <div class="form-group">
                         <label for="employee_id">Employee ID</label>
+                        <span data-toggle="tooltip" data-placement="right" title="This will be their punch in numbers for the timeclock as well as used for any office work that is submitted such as Write Ups, Terminations, Status Change Forms, etc.">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM7.5 4.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM8 11a1 1 0 0 1-1-1V6a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" />
+                            </svg>
+                        </span>
                         <input type="number" class="form-control" id="employee_id" name="employee_id" min="1000" max="99999" required>
                         <div class="invalid-feedback">Please enter a valid employee ID between 1000 and 99999.</div>
                     </div>
                     <div class="form-group">
                         <label for="employee_email">Employee Email</label>
+                        <span data-toggle="tooltip" data-placement="right" title="Please enter the new hire's PERSONAL e-mail address. They will get an email once their employment is approved by HR. The e-mail will contain their punch in number, NASCAR Car Wash email, and password. They will also get a download link to get Microsoft Teams.'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM7.5 4.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM8 11a1 1 0 0 1-1-1V6a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" />
+                            </svg>
+                        </span>
                         <input type="email" class="form-control" id="employee_email" name="employee_email" required>
                         <div class="invalid-feedback">Please enter a valid email address.</div>
                     </div>
                     <div class="form-group">
                         <label for="file_upload">File Upload</label>
+                        <span data-toggle="tooltip" data-placement="right" title="Please upload one single PDF file that contains all the necessary contracts, government forms and proper I-9 Identification (The easiest identification for this is either a Birth Certificate or Driver's License AND Social Security Card).')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM7.5 4.5a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM8 11a1 1 0 0 1-1-1V6a1 1 0 0 1 2 0v4a1 1 0 0 1-1 1z" />
+                            </svg>
+                        </span>
                         <input type="file" id="file_upload" name="file_upload" accept=".pdf" required>
                         <div class="invalid-feedback">Please upload a PDF file.</div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                    <button id="submit-btn" class="btn btn-primary">Submit Request</button>
                 </form>
             </div>
         </div>
