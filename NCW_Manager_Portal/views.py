@@ -66,6 +66,36 @@ def EmployeeTermination():
         message='Your application description page.'
     )
 
+@app.route('/DamageClaims')
+def DamageClaims():
+    """Renders the about page."""
+    return render_template(
+        'DamageClaims.html',
+        title='Damage Claims',
+        year=datetime.now().year,
+        message='Your application description page.'
+    )
+
+@app.route('/DowntimeLogger')
+def DowntimeLogger():
+    """Renders the about page."""
+    return render_template(
+        'DowntimeLogger.html',
+        title='Downtime Logger',
+        year=datetime.now().year,
+        message='Your application description page.'
+    )
+
+@app.route('/TicketSubmitter')
+def TicketSubmitter():
+    """Renders the about page."""
+    return render_template(
+        'TicketSubmitter.html',
+        title='Ticket Submitter',
+        year=datetime.now().year,
+        message='Your application description page.'
+    )
+
 @app.route('/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH'])
 def catch_all(path):
     """Catches any errors and returns error page."""

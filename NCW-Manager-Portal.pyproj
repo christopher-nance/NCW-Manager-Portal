@@ -18,7 +18,7 @@
     <Name>NCW-Manager-Portal</Name>
     <RootNamespace>NCW-Manager-Portal</RootNamespace>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,10 +40,15 @@
     <Folder Include="NCW_Manager_Portal\static\" />
     <Folder Include="NCW_Manager_Portal\static\content\" />
     <Folder Include="NCW_Manager_Portal\static\fonts\" />
+    <Folder Include="NCW_Manager_Portal\static\assets\" />
     <Folder Include="NCW_Manager_Portal\static\scripts\" />
     <Folder Include="NCW_Manager_Portal\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NCW_Manager_Portal\static\assets\NCWNewLogo.png" />
+    <Content Include="NCW_Manager_Portal\templates\DowntimeLogger.html" />
+    <Content Include="NCW_Manager_Portal\templates\TicketSubmitter.html" />
+    <Content Include="NCW_Manager_Portal\templates\DamageClaims.html" />
     <Content Include="NCW_Manager_Portal\templates\EmployeeTermination.html" />
     <Content Include="NCW_Manager_Portal\templates\missingPage.html" />
     <Content Include="NCW_Manager_Portal\templates\IncidentReport.html" />
@@ -77,6 +82,15 @@
     <Content Include="NCW_Manager_Portal\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.10</Version>
+      <Description>env1 (Python 3.10)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.10</Version>

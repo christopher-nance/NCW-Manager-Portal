@@ -3,10 +3,19 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h1>Manager Portal</h1>
-    <p class="lead">Welcome to your management portal for NASCAR Car Wash.</p>
-    <p><a href="mailto:chris@nascarcarwash.com" class="btn btn-danger btn-large">Log out &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Manager Portal</h1>
+            <h3>Welcome to your management portal for NASCAR Car Wash.</h3>
+            <p><a href="mailto:chris@nascarcarwash.com" class="btn btn-danger btn-large">Log out &raquo;</a></p>
+        </div>
+        <div class="col-md-4 d-flex justify-content-end align-items-center">
+            <img src="../static/assets/NCWNewLogo.png" style="width: 70%; height: auto;" />
+        </div>
+    </div>
 </div>
+
+
 
 <div class="row">
     <div class="col-md-4">
@@ -30,11 +39,41 @@
         <p><a class="btn btn-warning" href="{{url_for('NewHirePaperwork')}}">Request Paperwork Review &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <p><a class="btn btn-danger" href="{{url_for('IncidentReport')}}">Submit Report &raquo;</a></p>
+        <p><a class="btn btn-danger" href="{{url_for('IncidentReport')}}">Incident Report Portal&raquo;</a></p>
     </div>
     <div class="col-md-4">
         <p><a class="btn btn-primary" href="{{url_for('EmployeeTermination')}}">Request Termination &raquo;</a></p>
     </div>
 </div>
+<br />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <h2>Damage Claims</h2>
+        <p>
+            Use this portal to submit damage claim information (including pictures or videos) to management for review. This will automatically fill out a from for you upon form submission.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Downtime Logger</h2>
+        <p>If your site goes down for any reason during normal operating hours, you MUST fill this form out. Additionally, if your store does not open on-time or closes early, then you will need to fill this form out as well.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Maintenance/Technology</h2>
+        <p>Problem with your equipment or technology? File a ticket using this portal to let management know. We will follow up with you once your ticket has been accepted and researched.</p>
+    </div>
+</div>
 
-    {% endblock %}
+<div class="row">
+    <div class="col-md-4">
+        <p><a class="btn btn-warning" href="{{url_for('DamageClaims')}}">Damage Claim Portal &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <p><a class="btn btn-danger" href="{{url_for('DowntimeLogger')}}">Downtime Portal &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <p><a class="btn btn-primary" href="{{url_for('TicketSubmitter')}}">Maintenance Ticket Portal &raquo;</a></p>
+    </div>
+</div>
+
+{% endblock %}
