@@ -3,12 +3,10 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-import flask
 from flask import render_template, session, request, redirect, url_for
 from NCW_Manager_Portal import app
 import msal
 
-app = flask(__name__)
 app.secret_key = "my_secret_key"
 
 # Configure MSAL settings
