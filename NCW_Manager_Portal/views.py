@@ -6,6 +6,7 @@ from datetime import datetime
 from flask import render_template, session, request, redirect, url_for
 from NCW_Manager_Portal import app
 import msal
+import requests
 
 app.secret_key = "my_secret_key"
 
@@ -13,7 +14,9 @@ app.secret_key = "my_secret_key"
 CLIENT_ID = "e732516b-f803-473a-bb61-bcd394488ee1"
 CLIENT_SECRET = "_Xv8Q~bsNq0hGydp3QUJJMSLuK~GTukZ3HGHJc-j"
 AUTHORITY = "https://login.microsoftonline.com/16abb6e6-23e2-421c-8afd-0e7a19ce0fe0"
-REDIRECT_URI = "https://manager-portal-rg.azurewebsites.net/callback"
+REDIRECT_URI = "https://manager-portal-rg.azurewebsites.net/callback" 
+# REDIRECT_URI (DEV):  http://localhost:5555/callback
+# REDIRECT_URI (PROD): https://manager-portal-rg.azurewebsites.net/callback
 SCOPE = ["User.Read"]
 
 # Create a new MSAL client
@@ -36,6 +39,14 @@ def callback():
             session["access_token"] = result["access_token"]
             return redirect(url_for("home"))
     return "Authentication failed."
+
+@app.route("/logout")
+def logout():
+    # Clear the user's session by removing their access token
+    session.pop("access_token", None)
+
+    # Redirect the user back to the login page
+    return redirect(url_for("login"))
 
 
 @app.route('/')
